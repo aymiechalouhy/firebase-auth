@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import '../widget_tree.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,30 +20,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      home: const WidgetTree(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Firebase"),
-      ),
-      body: const Center(
-          child: Text(
-        "Firebase",
-        style: TextStyle(fontSize: 50, color: Colors.blue),
-      )),
-    );
-  }
-}
